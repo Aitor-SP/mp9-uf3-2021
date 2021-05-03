@@ -30,8 +30,6 @@ public class ServidorAdivinaUDP_Obj {
 			//groupMulticast = new InetSocketAddress(multicastIp,multiport);
 			//netIf = NetworkInterface.getByName("wlp0s20f3");
 			NetworkInterface.networkInterfaces().forEach(i -> System.out.println(i.toString()));
-		} catch (SocketException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,9 +83,7 @@ public class ServidorAdivinaUDP_Obj {
 				int tirades = tauler.map_jugadors.get(j.Nom) + 1;
 				tauler.map_jugadors.put(j.Nom, tirades);
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 

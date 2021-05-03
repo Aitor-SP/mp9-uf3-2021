@@ -175,7 +175,7 @@ public class ClientAdivinaUDP_Obj {
 		}
 		
 		if(cAdivina.getResult() == 0) {
-			System.out.println("Fi, ho has aconseguit amb "+ cAdivina.t.map_jugadors.get(jugador).intValue() +" intents");
+			System.out.println("Fi, ho has aconseguit amb "+ cAdivina.t.map_jugadors.get(jugador) +" intents");
 			cAdivina.t.map_jugadors.forEach((k,v)-> System.out.println(k + "->" + v));
 		} else {
 			System.out.println("Has perdut");

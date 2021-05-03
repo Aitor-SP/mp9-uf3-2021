@@ -61,7 +61,7 @@ public class ClientTcpAdivina extends Thread {
 	public String getRequest(String serverData) {
 		String ret;
 		System.out.println(serverData);
-		if( serverData.equals("Correcte") ) {
+		if(serverData.equals("Correcte")) {
 			continueConnected = false;
 			ret = "Campió!";
 		} else {
@@ -110,7 +110,7 @@ public class ClientTcpAdivina extends Thread {
  
        // String hostName = args[0];
        // int portNumber = Integer.parseInt(args[1]);
-        ClientTcpAdivina clientTcp = new ClientTcpAdivina("localhost",5558);
+        ClientTcpAdivina clientTcp = new ClientTcpAdivina("192.168.22.114",5558);
         clientTcp.start();
 	}
 }

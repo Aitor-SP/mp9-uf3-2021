@@ -24,7 +24,7 @@ public class Tauler implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Intents\n");
-        map_jugadors.forEach((k,v) -> sb.append(k + " - " + v + "\n"));
+        map_jugadors.forEach((k,v) -> sb.append(k).append(" - ").append(v).append("\n"));
         return sb.toString();
     }
 }
