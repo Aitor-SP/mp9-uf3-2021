@@ -25,7 +25,6 @@ public class ClientAdivinaUDP_Obj {
 	private MulticastSocket multisocket;
 	private InetAddress multicastIP;
 	boolean continueRunning = true;
-
 	InetSocketAddress groupMulticast;
 	NetworkInterface netIf;
 
