@@ -180,5 +180,4 @@ public class ClientAdivinaUDP_Obj {
 			System.out.println("Has perdut");
 		}
 	}
-
 }
