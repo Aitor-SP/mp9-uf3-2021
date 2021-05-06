@@ -9,6 +9,7 @@ public class Llista implements Serializable {
     private List<Integer> numberList;
 
     public Llista(String nom, List<Integer> numberList) {
+        this.nom = nom;
         this.numberList = numberList;
     }
 

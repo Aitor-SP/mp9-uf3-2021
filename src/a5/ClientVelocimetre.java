@@ -10,15 +10,15 @@ public class ClientVelocimetre {
     boolean continueRunning = true;
     InetSocketAddress groupMulticast;
     NetworkInterface netIf;
-    private int media;
+    private int velocidadMedia;
     private float resultado;
     private int contador;
 
     public ClientVelocimetre() {
-        media = 0;
+        velocidadMedia = 0;
         contador = 0;
         try {
-            multicastIP = InetAddress.getByName("224.0.22.114");
+            multicastIP = InetAddress.getByName("AQUI VA LA IP");
             groupMulticast = new InetSocketAddress(multicastIP,5557);
             netIf = NetworkInterface.getByName("wlp0s20f3");
         } catch (IOException e) {
@@ -38,14 +38,14 @@ public class ClientVelocimetre {
             socket.setSoTimeout(5000);
             try{
                 socket.receive(packet);
-                media = media + ByteBuffer.wrap(packet.getData()).getInt();
+                velocidadMedia = velocidadMedia + ByteBuffer.wrap(packet.getData()).getInt();
                 System.out.println(ByteBuffer.wrap(packet.getData()).getInt());
                 contador++;
                 if(contador == 5){
                     contador = 0;
-                    resultado = (float) media / 5;
+                    resultado = (float) velocidadMedia / 5;
                     System.out.println("MEDIA: " + resultado);
-                    media = 0;
+                    velocidadMedia = 0;
                 }
             }catch (SocketTimeoutException e){
                 System.out.println(e.getMessage());
