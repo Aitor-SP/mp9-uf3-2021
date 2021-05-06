@@ -28,7 +28,7 @@ public class ClientTcpAdivina extends Thread {
 
 	public void run() {
 		String serverData;
-		String request;//
+		String request;
 		
 		Socket socket;
 		BufferedReader in;
