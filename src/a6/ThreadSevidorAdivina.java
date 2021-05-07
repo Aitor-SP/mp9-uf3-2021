@@ -28,6 +28,7 @@ public class ThreadSevidorAdivina implements Runnable {
 				entrante = (Llista)objectInputStream.readObject();
 				saliente = generaResposta(entrante);
 				objectOutputStream.writeObject(saliente);
+				objectOutputStream.flush();
 			}
 		}catch(IOException | ClassNotFoundException e){
 			System.out.println(e.getLocalizedMessage());
