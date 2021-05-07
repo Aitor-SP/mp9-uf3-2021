@@ -18,9 +18,9 @@ public class ClientVelocimetre {
         velocidadMedia = 0;
         contador = 0;
         try {
-            multicastIP = InetAddress.getByName("AQUI VA LA IP");
+            multicastIP = InetAddress.getByName("IP");
             groupMulticast = new InetSocketAddress(multicastIP,5557);
-            netIf = NetworkInterface.getByName("wlp0s20f3");
+            netIf = NetworkInterface.getByName("NETWORK INTERFACE");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -28,7 +28,7 @@ public class ClientVelocimetre {
 
     public void runClient() throws IOException {
         byte [] receivedData = new byte[1024];
-        //Hay que meterlo aqui para que funcione
+        //Hay que meter aqui el multicast para que funcione
         MulticastSocket socket = new MulticastSocket(5557);
         DatagramPacket packet;
         socket.joinGroup(groupMulticast, netIf);

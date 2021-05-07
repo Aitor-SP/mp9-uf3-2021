@@ -1,7 +1,5 @@
 package a6;
 
-import a3.NombreSecret;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,11 +13,9 @@ public class SrvTcpAdivina {
  * */
 	
 	int port;
-	NombreSecret ns;
 	
-	public SrvTcpAdivina(int port ) {
+	public SrvTcpAdivina(int port) {
 		this.port = port;
-		ns = new NombreSecret(100);
 	}
 	
 	public void listen() {
@@ -30,8 +26,9 @@ public class SrvTcpAdivina {
 			serverSocket = new ServerSocket(port);
 			while(true) { //esperar connexió del client i llançar thread
 				clientSocket = serverSocket.accept();
+				System.out.println("Conexión establecida");
 				//Llançar Thread per establir la comunicació
-				ThreadSevidorAdivina FilServidor = new ThreadSevidorAdivina(clientSocket, ns);
+				ThreadSevidorAdivina FilServidor = new ThreadSevidorAdivina(clientSocket);
 				Thread client = new Thread(FilServidor);
 				client.start();
 			}
@@ -41,16 +38,7 @@ public class SrvTcpAdivina {
 	}
 
 	public static void main(String[] args) {
-		/*if (args.length != 1) {
-            System.err.println("Usage: java SrvTcpAdivina <port number>");
-            System.exit(1);
-        }*/
- 
-        
-        //int port = Integer.parseInt(args[0]);
         SrvTcpAdivina srv = new SrvTcpAdivina(5558);
         srv.listen();
-
 	}
-
 }

@@ -28,4 +28,12 @@ public class Llista implements Serializable {
     public void setNumberList(List<Integer> numberList) {
         this.numberList = numberList;
     }
+
+    @Override
+    public String toString() {
+        return "Llista{" +
+                "nom='" + nom + '\'' +
+                ", numberList=" + numberList +
+                '}';
+    }
 }

@@ -36,8 +36,6 @@ public class SrvVelocitats {
 			} catch (InterruptedException ex) {
 				ex.getMessage();
 			}
-		
-			
 		}
 		socket.close();
 	}
